@@ -3,7 +3,11 @@ document.body.addEventListener("keyup", (event) => {
 });
 document.querySelector(".composer button").addEventListener("click", () => {
   let song = document.querySelector("#input").value;
-  console.log("Música", song);
+
+  if (song !== "") {
+    let songArray = song.split("");
+    console.log(songArray);
+  }
 });
 
 function playSound(sound) {

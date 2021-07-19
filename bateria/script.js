@@ -6,7 +6,7 @@ document.querySelector(".composer button").addEventListener("click", () => {
 
   if (song !== "") {
     let songArray = song.split("");
-    console.log(songArray);
+    playComposition(songArray);
   }
 });
 
@@ -25,5 +25,17 @@ function playSound(sound) {
     setTimeout(() => {
       keyElement.classList.remove("active");
     }, 300);
+  }
+}
+
+function playComposition(songArray) {
+  let wait = 0;
+
+  for (let songItem of songArray) {
+    setTimeout(() => {
+      playSound(`key${songItem}`);
+    }, wait);
+
+    wait += 250;
   }
 }

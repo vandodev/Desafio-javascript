@@ -8,6 +8,18 @@ function updateClock() {
   let hour = now.getHours();
   let minute = now.getMinutes();
   let second = now.getSeconds();
+
+  digitalElement.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(
+    second
+  )}`;
+}
+
+function fixZero(time) {
+  if (time < 10) {
+    return "0" + time;
+  } else {
+    return time;
+  }
 }
 
 setInterval(updateClock, 1000);

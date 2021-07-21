@@ -12,8 +12,12 @@ document.querySelector(".busca").addEventListener("submit", async (event) => {
 
     let results = await fetch(url);
     let json = await results.json();
-    console.log(json);
-  } else {
+
+    if (json.cod === 200) {
+      showInfo({});
+    } else {
+      showWarning("Não encontramos essa localização");
+    }
   }
 });
 

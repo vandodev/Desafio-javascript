@@ -15,4 +15,8 @@ let warning = "";
 let playng = false;
 
 //Events
+document.querySelector(".reset").addEventListener("click", reset);
+document.querySelectorAll(".item").forEach((item) => {
+  item.addEventListener("click", itemClick);
+});
 //Functions

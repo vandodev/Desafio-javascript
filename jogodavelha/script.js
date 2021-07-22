@@ -19,4 +19,18 @@ document.querySelector(".reset").addEventListener("click", reset);
 document.querySelectorAll(".item").forEach((item) => {
   item.addEventListener("click", itemClick);
 });
+
 //Functions
+
+function reset() {
+  warning = "";
+
+  let random = Math.floor(Math.random() * 2);
+  player = random === 0 ? "X" : "O";
+
+  for (let i in square) {
+    square[i] = "";
+  }
+
+  playing = true;
+}

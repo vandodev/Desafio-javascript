@@ -14,6 +14,7 @@ let vez = "";
 let warning = "";
 let playng = false;
 
+reset();
 //Events
 document.querySelector(".reset").addEventListener("click", reset);
 document.querySelectorAll(".item").forEach((item) => {

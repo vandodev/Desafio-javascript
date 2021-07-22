@@ -57,5 +57,12 @@ function itemClick(event) {
   if (playing && square[item] === "") {
     square[item] = player;
     renderSquare();
+    togglePlayer();
   }
+}
+
+//Função responsável por fazer a troca de turno dos jogadores, acionada na função itemClick.
+function togglePlayer() {
+  player = player === "X" ? "O" : "X";
+  renderInfo();
 }

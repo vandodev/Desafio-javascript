@@ -43,6 +43,7 @@ function renderSquare() {
     let item = document.querySelector(`div[data-item=${i}]`);
     item.innerHTML = square[i];
   }
+  checkGame();
 }
 
 //Função responsável por exibir a informação de turno do jogador e mensagens.
@@ -65,4 +66,41 @@ function itemClick(event) {
 function togglePlayer() {
   player = player === "X" ? "O" : "X";
   renderInfo();
+}
+
+//Função responsável por validar o status do jogo (vitória, empate) a cada clique feito pelo jogador.
+function checkGame() {
+  if (checkWinnerFor("X")) {
+    warning = 'O jogador "X" venceu';
+    playing = false;
+  } else if (checkWinnerFor("O")) {
+    warning = 'O jogador "O" venceu';
+    playing = false;
+  }
+}
+
+//Função responsável pela lógica e condições de vitória do jogo da velha.
+function checkWinnerFor(player) {
+  let pos = [
+    "a1,a2,a3",
+    "b1,b2,b3",
+    "c1,c2,c3",
+
+    "a1,b1,c1",
+    "a2,b2,c2",
+    "a3,b3,C3",
+
+    "a1,b2,c3",
+    "a3,b2,c1",
+  ];
+
+  for (let w in pos) {
+    let pArray = pos[w].split(",");
+    let hasWon = pArray.every((option) => square[option] === player);
+    if (hasWon) {
+      return true;
+    }
+  }
+
+  return false;
 }

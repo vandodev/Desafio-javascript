@@ -76,6 +76,9 @@ function checkGame() {
   } else if (checkWinnerFor("O")) {
     warning = 'O jogador "O" venceu';
     playing = false;
+  } else if (isFull()) {
+    warning = "Deu empate";
+    playing = false;
   }
 }
 
@@ -103,4 +106,15 @@ function checkWinnerFor(player) {
   }
 
   return false;
+}
+
+//Função responsável por validar a condição de empate.
+function isFull() {
+  for (let i in square) {
+    if (square[i] === "") {
+      return false;
+    }
+  }
+
+  return true;
 }

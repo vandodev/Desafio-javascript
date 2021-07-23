@@ -19,7 +19,10 @@ screen.addEventListener("mouseup", mouseUpEvent);
 //fUNCTIONS
 function colorClickEvent(e) {
   let color = e.target.getAttribute("data-color");
-  console.log("Cor clicada", color);
+  currentColor = color;
+
+  document.querySelector(".color.active").classList.remove("active");
+  e.target.classList.add("active");
 }
 
 function mouseDownEvent(e) {

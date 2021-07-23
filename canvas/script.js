@@ -1,5 +1,6 @@
 //iNITIAL DATA
 let currentColor = "black";
+let canDraw = false;
 
 let screen = document.querySelector("#tela");
 let ctx = screen.getContext("2d");
@@ -20,13 +21,15 @@ function colorClickEvent(e) {
 }
 
 function mouseDownEvent() {
-  console.log("Clicou");
+  canDraw = true;
 }
 
 function mouseMoveEvent() {
-  console.log("Moveu");
+  if (canDraw) {
+    console.log("Desenhando");
+  }
 }
 
 function mouseUpEvent() {
-  console.log("Soltou");
+  canDraw = false;
 }

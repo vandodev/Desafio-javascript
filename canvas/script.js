@@ -24,9 +24,13 @@ function mouseDownEvent() {
   canDraw = true;
 }
 
-function mouseMoveEvent() {
+function mouseMoveEvent(e) {
   if (canDraw) {
-    console.log("Desenhando");
+    //Mostra posição x e y
+    console.log(e.pageX, e.pageY);
+    //Corrigindo posição
+    mouseX = e.pageX - screen.offsetLeft;
+    mouseY = e.pageY - screen.offsetTop;
   }
 }
 

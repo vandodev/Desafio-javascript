@@ -28,6 +28,8 @@ function showQuestion() {
     document.querySelectorAll(".options .option").forEach((item) => {
       item.addEventListener("click", optionClickEvent);
     });
+  } else {
+    finishQuiz();
   }
 }
 
@@ -40,4 +42,10 @@ function optionClickEvent(e) {
 
   currentQuestion++;
   showQuestion();
+}
+
+function finishQuiz() {
+  document.querySelector(".scoreArea").style.display = "block";
+  document.querySelector(".questionArea").style.display = "none";
+  document.querySelector(".progress--bar").style.width = `100%`;
 }

@@ -28,5 +28,11 @@ function showQuestion() {
 }
 
 function optionClickEvent(e) {
-  console.log("Clicou em: ", e.target.getAttribute("data-op"));
+  let clickedOption = parseInt(e.target.getAttribute("data-op"));
+
+  if (questions[currentQuestion].answer === clickedOption) {
+    console.log("Acertou");
+  } else {
+    console.log("Errou");
+  }
 }

@@ -27,4 +27,6 @@ function showQuestion() {
   }
 }
 
-function optionClickEvent() {}
+function optionClickEvent(e) {
+  console.log("Clicou em: ", e.target.getAttribute("data-op"));
+}

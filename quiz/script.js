@@ -20,5 +20,11 @@ function showQuestion() {
       }</span>${q.options[i]}</div>`;
     }
     document.querySelector(".options").innerHTML = optionsHtml;
+
+    document.querySelectorAll(".options .option").forEach((item) => {
+      item.addEventListener("click", optionClickEvent);
+    });
   }
 }
+
+function optionClickEvent() {}

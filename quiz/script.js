@@ -12,5 +12,11 @@ function showQuestion() {
     document.querySelector(".questionArea").style.display = "block";
 
     document.querySelector(".question").innerHTML = q.question;
+
+    for (let i in q.options) {
+      document.querySelector(
+        ".options"
+      ).innerHTML += `<div>${q.options[i]}</div>`;
+    }
   }
 }

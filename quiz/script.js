@@ -13,10 +13,10 @@ function showQuestion() {
 
     document.querySelector(".question").innerHTML = q.question;
 
+    let optionsHtml = " ";
     for (let i in q.options) {
-      document.querySelector(
-        ".options"
-      ).innerHTML += `<div>${q.options[i]}</div>`;
+      optionsHtml += `<div>${q.options[i]}</div>`;
     }
+    document.querySelector(".options").innerHTML = optionsHtml;
   }
 }

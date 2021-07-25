@@ -5,6 +5,10 @@ document.querySelectorAll(".item").forEach((item) => {
 });
 
 //FUNCTIONS ITEM
-function dragStart(e) {}
+function dragStart(e) {
+  e.currentTarget.classList.add("dragging");
+}
 
-function dragEnd(e) {}
+function dragEnd(e) {
+  e.currentTarget.classList.remove("dragging");
+}

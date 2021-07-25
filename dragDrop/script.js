@@ -1,4 +1,10 @@
-document.querySelector(".neutralArea").addEventListener("click", (e) => {
-  console.log("TARGET", e.target);
-  console.log("CURRENT_TARGET", e.currentTarget);
+//EVENTS
+document.querySelectorAll(".item").forEach((item) => {
+  item.addEventListener("dragstart", dragStart);
+  item.addEventListener("dragend", dragEnd);
 });
+
+//FUNCTIONS ITEM
+function dragStart(e) {}
+
+function dragEnd(e) {}

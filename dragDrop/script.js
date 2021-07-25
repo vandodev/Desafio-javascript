@@ -22,11 +22,11 @@ function dragEnd(e) {
 //FUNCTIONS AREA
 function dragOver(e) {
   e.preventDefault();
-  //console.log("Passou por cima");
+  e.currentTarget.classList.add("hover");
 }
 
 function dragLeave(e) {
-  //console.log("Saiu da área dropavel");
+  e.currentTarget.classList.remove("hover");
 }
 
 function drop(e) {

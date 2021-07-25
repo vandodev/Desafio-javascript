@@ -1,3 +1,10 @@
+//INITAIL DATA
+let areas = {
+  a: null,
+  b: null,
+  c: null,
+};
+
 //EVENTS
 document.querySelectorAll(".item").forEach((item) => {
   item.addEventListener("dragstart", dragStart);
@@ -45,6 +52,7 @@ function drop(e) {
   if (e.currentTarget.querySelector(".item") === null) {
     let dragItem = document.querySelector(".item.dragging");
     e.currentTarget.appendChild(dragItem);
+    updateAreas();
   }
 }
 
@@ -62,4 +70,19 @@ function dropNeutral(e) {
   e.currentTarget.classList.remove("hover");
   let dragItem = document.querySelector(".item.dragging");
   e.currentTarget.appendChild(dragItem);
+  updateAreas();
+}
+
+//LOGIC FUNCTIONS
+function updateAreas() {
+  document.querySelectorAll(".area").forEach((area) => {
+    let name = area.getAttribute("data-name");
+
+    if (area.querySelector(".item") !== null) {
+      areas[name] = area.querySelector(".item").innerHTML;
+    } else {
+      areas[name] = null;
+    }
+  });
+  console.log(areas);
 }

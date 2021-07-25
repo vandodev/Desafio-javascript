@@ -20,8 +20,15 @@ function dragEnd(e) {
 }
 
 //FUNCTIONS AREA
-function dragOver(e) {}
+function dragOver(e) {
+  e.preventDefault();
+  //console.log("Passou por cima");
+}
 
-function dragLeave(e) {}
+function dragLeave(e) {
+  //console.log("Saiu da área dropavel");
+}
 
-function drop(e) {}
+function drop(e) {
+  console.log("Soltou");
+}

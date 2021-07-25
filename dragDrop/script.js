@@ -30,5 +30,7 @@ function dragLeave(e) {
 }
 
 function drop(e) {
-  console.log("Soltou");
+  e.currentTarget.classList.remove("hover");
+  let dragItem = document.querySelector(".item.dragging");
+  console.log(dragItem);
 }
